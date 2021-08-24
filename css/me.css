@@ -1,0 +1,758 @@
+/* =========== About Me Pge ==========*/
+
+:root {
+  --background: rgba(0, 0, 0, 0.85);
+  --primary: #696969;
+  --secondary: springgreen;
+
+  --whiteDark: rgba(255, 255, 255, 0.2);
+  --white: white;
+
+  --black: black;
+
+  --gray: gray;
+  --darkGray: darkslategray;
+
+  --javascript: #f0d91d;
+  --react-js: #61dafb;
+  --react-native: #40bbdd;
+  --java: #2f958e;
+  --figma: #f86e60;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(
+    172deg,
+    rgba(15, 9, 21, 0.741) 20%,
+    rgba(33, 0, 67, 0.618) 100%
+  );
+}
+
+header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 5px;
+}
+
+header > a {
+  text-decoration: none;
+  width: 180px;
+}
+
+header > a > .me {
+  transition: all 0.2s ease-in-out;
+}
+
+header > a > .me > strong {
+  color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+  animation: header 0.5s infinite alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes header {
+  to {
+    text-shadow: 0 0 10px var(--secondary);
+  }
+}
+
+header > a:hover .me {
+  color: var(--secondary);
+}
+
+header > a:hover .me strong {
+  color: var(--white);
+}
+
+.me {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: 800;
+  width: min-content;
+  line-height: 28px;
+}
+
+nav > a {
+  display: none;
+  color: white;
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  transform: none;
+}
+
+nav ul > a {
+  display: none;
+}
+
+nav li {
+  height: fit-content;
+  padding: 19px;
+  border-radius: 4px;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0px 0px 4px 0px var(--secondary);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+nav li:hover {
+  transform: translateY(-2px);
+  background-color: var(--whiteDark);
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu a {
+  color: var(--white);
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.left .skills {
+  display: block;
+  color: white;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 70px;
+  margin-top: 50px;
+}
+
+.left .skills span:first-child {
+  display: block;
+  color: var(--gray);
+}
+
+.left .skills span strong {
+  color: white;
+}
+
+.left .skills strong {
+  color: var(--secondary);
+}
+
+.left .tab {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.left .tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  height: fit-content;
+  white-space: pre;
+}
+
+.left .tab button:hover {
+  color: var(--secondary);
+}
+
+.left .tab button.active {
+  color: var(--secondary);
+}
+
+.left #Skills,
+.left #Projects,
+.left #MyHistory,
+.left #Love {
+  display: none;
+  flex: 1;
+  border-radius: 4px;
+}
+
+.left #Skills ul,
+.left #MyHistory ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid var(--whiteDark);
+  padding: 20px;
+  margin: 10px 0;
+  flex: 1;
+}
+
+.left #MyHistory ul {
+  flex-direction: column;
+}
+
+.left #Skills ul li {
+  color: var(--white);
+  font-size: 1.4rem;
+  min-width: 100px;
+}
+
+.left #Skills ul li {
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+.left #Skills ul li .skill {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left #Skills ul li .skill > div {
+  flex: 1;
+  display: flex;
+  width: 10px;
+  align-items: flex-end;
+  margin: 10px 0;
+  box-shadow: 0 0 2px 3px var(--secondary);
+  border-radius: 4px;
+}
+
+.left #Skills ul li .skill > div > div {
+  flex: 1;
+  height: 95%;
+  background-color: var(--secondary);
+  box-shadow: 0 0 7px 2px var(--secondary);
+}
+
+.left #Skills ul li .skill > .javascript {
+  box-shadow: 0 0 2px 3px var(--javascript);
+}
+
+.left #Skills ul li .skill > .javascript > div {
+  box-shadow: 0 0 2px 3px var(--javascript);
+  background-color: var(--javascript);
+}
+
+.left #Skills ul li .skill > .node-js {
+  box-shadow: 0 0 2px 3px var(--secondary);
+}
+
+.left #Skills ul li .skill > .node-js > div {
+  height: 83%;
+  box-shadow: 0 0 2px 3px var(--secondary);
+  background-color: var(--secondary);
+}
+
+.left #Skills ul li .skill > .react-js {
+  box-shadow: 0 0 2px 3px var(--react-js);
+}
+
+.left #Skills ul li .skill > .react-js > div {
+  height: 90%;
+  box-shadow: 0 0 2px 3px var(--react-js);
+  background-color: var(--react-js);
+}
+
+.left #Skills ul li .skill > .react-native {
+  box-shadow: 0 0 2px 3px var(--react-native);
+}
+
+.left #Skills ul li .skill > .react-native > div {
+  height: 90%;
+  box-shadow: 0 0 2px 3px var(--react-native);
+  background-color: var(--react-native);
+}
+
+.left #Skills ul li .skill > .java {
+  box-shadow: 0 0 2px 3px var(--java);
+}
+
+.left #Skills ul li .skill > .java > div {
+  height: 70%;
+  box-shadow: 0 0 2px 3px var(--java);
+  background-color: var(--java);
+}
+
+.left #Skills ul li .skill > .figma {
+  box-shadow: 0 0 2px 3px var(--figma);
+}
+
+.left #Skills ul li .skill > .figma > div {
+  height: 65%;
+  box-shadow: 0 0 2px 3px var(--figma);
+  background-color: var(--figma);
+}
+
+.left #Projects {
+  justify-content: center;
+  align-items: center;
+}
+
+.left #Projects span {
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.left #Projects span > strong {
+  color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+  animation: glow 0.5s infinite alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.left #Love {
+  justify-content: center;
+  align-items: center;
+}
+
+.left #Love span {
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.left #Love span > strong {
+  color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+  animation: love 0.5s infinite alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes love {
+  to {
+    text-shadow: 0 0 10px var(--secondary);
+  }
+}
+
+.left #Projects span:hover {
+  color: var(--secondary);
+}
+
+.left #Projects span:hover strong {
+  color: var(--white);
+}
+
+.left #MyHistory ul div.line {
+  height: 1px;
+  background-color: var(--gray);
+}
+
+.left #MyHistory ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.left #MyHistory ul li span.first,
+.left #MyHistory ul li span.second,
+.left #MyHistory ul li span.third,
+.left #MyHistory ul li span.fourth,
+.left #MyHistory ul li span.fifth,
+.left #MyHistory ul li span.sixth {
+  font-size: 1.6rem;
+  color: var(--javascript);
+  font-weight: 700;
+}
+
+.left #MyHistory ul li span.second {
+  color: var(--secondary);
+}
+
+.left #MyHistory ul li span.third {
+  color: var(--react-js);
+}
+
+.left #MyHistory ul li span.fourth {
+  color: var(--react-native);
+}
+
+.left #MyHistory ul li span.fifth {
+  color: var(--java);
+}
+
+.left #MyHistory ul li span.sixth {
+  color: var(--figma);
+}
+
+.left #MyHistory ul li div.first {
+  flex: 1;
+  height: 5px;
+  background: var(--javascript);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.second {
+  flex: 1;
+  height: 5px;
+  background: var(--secondary);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.third {
+  flex: 1;
+  height: 5px;
+  background: var(--react-js);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.fourth {
+  flex: 1;
+  height: 5px;
+  background: var(--react-native);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.fifth {
+  flex: 1;
+  height: 5px;
+  background: var(--java);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li div.sixth {
+  flex: 1;
+  height: 5px;
+  background: var(--figma);
+  border-radius: 5px;
+}
+
+.left #MyHistory ul li .history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.left #MyHistory ul li .history i {
+  font-size: 1.5rem;
+  color: var(--figma);
+  animation: glow 0.5s infinite reverse;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes glow {
+  to {
+    text-shadow: 0 0 10px var(--figma);
+  }
+}
+
+.left #MyHistory ul li .history span {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.right img {
+  border-radius: 5px;
+  filter: brightness(0.7);
+  transition: all 0.2s ease-in-out;
+  transform: translate3d(-7px, -4px, -7px);
+  box-shadow: 7px 12px 10px -6px var(--background);
+  clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0 100%);
+}
+
+.right img:hover {
+  filter: brightness(1);
+  box-shadow: none;
+  transform: translate3d(2px, 2px, 2px);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+footer .social-media {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+}
+
+footer .social-media a {
+  color: var(--white);
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+footer .social-media a:hover {
+  color: var(--secondary);
+}
+
+footer span {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1000px) {
+  nav > a {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    position: fixed;
+    width: 30vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    padding: 80px 25px 0;
+    transform: translateX(105%);
+    transition: all 0.3s ease-in-out;
+    align-items: flex-start;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: -5px 0px 17px -6px var(--background);
+  }
+
+  nav li {
+    text-align: center;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 4px 0px var(--secondary);
+  }
+
+  nav ul > a {
+    display: block;
+    position: absolute;
+    font-size: 2rem;
+    color: var(--white);
+    right: 0;
+    top: 0;
+    padding: 20px;
+  }
+
+  .right img {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow: hidden;
+  }
+
+  nav ul {
+    width: 300px;
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 10px;
+  }
+
+  .left {
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .left .tab {
+    overflow-x: auto;
+    margin: 10px 0;
+    justify-content: space-between;
+    gap: 100px 50px;
+  }
+
+  .left #Skills ul {
+    overflow: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+  }
+
+  .left #Skills,
+  .left #Projects,
+  .left #MyHistory,
+  .left #Love {
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    align-items: center;
+    flex: 1;
+  }
+
+  .left #Skills ul li .skill {
+    align-items: flex-start;
+  }
+
+  .left #Skills ul li .skill > span:last-child {
+    width: 100%;
+    text-align: end;
+    font-size: 1.1rem;
+  }
+
+  .left #Skills ul li .skill > div {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 5px;
+    margin: 5px 0;
+  }
+
+  .left #Skills ul li .skill > .javascript > div {
+    width: 95%;
+    box-shadow: 0 0 1px 1px var(--javascript);
+  }
+
+  .left #Skills ul li .skill > .node-js > div {
+    width: 80%;
+    box-shadow: 0 0 1px 1px var(--secondary);
+  }
+
+  .left #Skills ul li .skill > .react-js > div {
+    width: 90%;
+    box-shadow: 0 0 1px 1px var(--react-js);
+  }
+
+  .left #Skills ul li .skill > .react-native > div {
+    width: 90%;
+    box-shadow: 0 0 1px 1px var(--react-native);
+  }
+
+  .left #Skills ul li .skill > .java > div {
+    width: 70%;
+    box-shadow: 0 0 1px 1px var(--java);
+  }
+
+  .left #Skills ul li .skill > .figma > div {
+    width: 65%;
+    box-shadow: 0 0 1px 1px var(--figma);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .left .tab button {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav ul {
+    width: 200px;
+  }
+
+  .left .tab button {
+    font-size: 1.4rem;
+  }
+
+  .left {
+    height: 100%;
+    margin-bottom: 4px;
+  }
+
+  .left .skills {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.6rem;
+  }
+
+  .left .actions {
+    margin-top: 50px;
+  }
+
+  .left #MyHistory ul li {
+    flex-direction: column;
+  }
+
+  .left #Skills,
+  .left #Projects,
+  .left #MyHistory,
+  .left #Love {
+    align-items: flex-start;
+  }
+
+  .left #Projects,
+  .left #Love {
+    align-items: center;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .left .skills {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    line-height: 50px;
+  }
+
+  .left .tab button {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .left .skills {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    line-height: 40px;
+  }
+
+  .left .actions span {
+    min-height: auto;
+    padding: 10px;
+    min-width: 150px;
+  }
+}
